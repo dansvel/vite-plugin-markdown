@@ -27,6 +27,8 @@ By default `withOrigin = false`.
 You can set it to `true` for return additional raw markdown string. Something like this
 `viteImportMarkdown(markedConfig, true)`
 
+See https://marked.js.org/using_advanced#options for more marked options
+
 ## Front matter
 
 Attributes can be added to the top the file in YAML format:
