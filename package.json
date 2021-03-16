@@ -28,5 +28,6 @@
     "plugin",
     "markdown",
     "front-matter"
-  ]
+  ],
+  "type": "module"
 }
