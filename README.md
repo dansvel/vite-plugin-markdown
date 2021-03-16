@@ -6,17 +6,17 @@ This plugin just for my purpose only, feel free to develop it up. Very inspired 
 ## Usage
 
 ```
-npm i vite-import-markdown --save-dev
+npm i @dansvel/vite-plugin-markdown --save-dev
 ```
 
 Then in your Vite config
 
 ```js
 // snowpack.config.js
-import viteImportMarkdown from 'vite-import-markdown';
+import vitePluginMarkdown from '@dansvel/vite-plugin-markdown';
 export default {
     plugins: [
-        viteImportMarkdown(markedConfig)
+        vitePluginMarkdown(markedConfig)
     ],
     // else
 };
