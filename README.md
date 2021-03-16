@@ -1,3 +1,17 @@
+# vite-import-markdown
+
+[![semantic release](https://github.com/dansvel/vite-import-markdown/workflows/semantic%20release/badge.svg)](https://github.com/dansvel/vite-import-markdown/actions?query=workflow%3A%22semantic+release%22) [![coverage](https://github.com/dansvel/vite-import-markdown/workflows/coverage/badge.svg)](https://dansvel.github.io/vite-import-markdown/) [![npm](https://badge.fury.io/js/%40dansvel%2Fvite-plugin-markdown.svg)](https://www.npmjs.com/package/@dansvel/vite-plugin-markdown)
+
+A plugin for importing markdown files in Vite
+
+## Install
+
+```
+npm install @dansvel/vite-plugin-markdown
+```
+
+<!-- anything below this line will be safe from template removal -->
+
 vite-import-markdown
 -----------------------
 
@@ -23,7 +37,7 @@ export default {
 
 ```
 
-By default `withOrigin = false`. 
+By default `withOrigin = false`.
 You can set it to `true` for return additional raw markdown string. Something like this
 `viteImportMarkdown(markedConfig, true)`
 
