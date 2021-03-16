@@ -1,4 +1,4 @@
-#vite-import-markdown
+# vite-import-markdown
 
 This plugin just for my purpose only, feel free to develop it up. Very inspired from [snowpack-plugin-markdown](https://github.com/joshnuss/snowpack-plugin-markdown). But, I add little different option.
 
