@@ -1,0 +1,16 @@
+{
+  "name": "vite-import-markdown",
+  "version": "1.0.0",
+  "description": "A plugin for importing markdown files in Vite",
+  "main": "index.js",
+  "repository": "https://github.com/dansvel/vite-import-markdown",
+  "author": "dan",
+  "license": "MIT",
+  "dependencies": {
+    "front-matter": "^4.0.2",
+    "marked": "^2.0.1"
+  },
+  "peerDependencies": {
+    "vite": "^2.0.4"
+  }
+}
