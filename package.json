@@ -1,9 +1,12 @@
 {
-  "name": "vite-import-markdown",
+  "name": "@dansvel/vite-plugin-markdown",
   "version": "1.0.0",
   "description": "A plugin for importing markdown files in Vite",
   "main": "index.js",
-  "repository": "https://github.com/dansvel/vite-import-markdown",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dansvel/vite-import-markdown.git"
+  },
   "author": "dan",
   "license": "MIT",
   "dependencies": {
@@ -12,5 +15,18 @@
   },
   "peerDependencies": {
     "vite": "^2.0.4"
-  }
+  },
+  "bugs": {
+    "url": "https://github.com/dansvel/vite-import-markdown/issues"
+  },
+  "homepage": "https://github.com/dansvel/vite-import-markdown#readme",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "vite",
+    "plugin",
+    "markdown",
+    "front-matter"
+  ]
 }

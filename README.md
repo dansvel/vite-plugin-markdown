@@ -23,8 +23,8 @@ export default {
 
 ```
 
-by default use `withOrigin = false` option, 
-you can set it to `true` for return additional raw markdown string. Something like this
+By default `withOrigin = false`. 
+You can set it to `true` for return additional raw markdown string. Something like this
 `viteImportMarkdown(markedConfig, true)`
 
 ## Front matter
