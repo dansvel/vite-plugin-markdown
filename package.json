@@ -2,7 +2,6 @@
   "name": "@dansvel/vite-plugin-markdown",
   "version": "1.0.5",
   "description": "A plugin for importing markdown files in Vite",
-  "main": "index.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/dansvel/vite-import-markdown.git"
@@ -29,5 +28,6 @@
     "markdown",
     "front-matter"
   ],
-  "type": "module"
+  "main": "index.cjs",
+  "module": "index.mjs"
 }
