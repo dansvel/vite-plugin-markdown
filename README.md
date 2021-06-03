@@ -83,9 +83,9 @@ Attributes can be added to the top the file in YAML format:
 title: Hello World!
 date: 2020-01-01
 ---
+```
 
 ### Single file
-```
 
 The attributes will be available when imported:
 
