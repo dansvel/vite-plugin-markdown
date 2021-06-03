@@ -8,25 +8,71 @@ This plugin just for my purpose only, feel free to develop it up. Very inspired 
 npm i @dansvel/vite-plugin-markdown --save-dev
 ```
 
-Then in your Vite config
+Then add it to your Vite config
+
+### Example: SvelteKit
+```js
+import vitePluginMarkdown from '@dansvel/vite-plugin-markdown'
+
+/** @type {import('@sveltejs/kit').Config} */
+const config = {
+  // some preprocessor maybe
+	kit: {
+		target: '#svelte',
+    vite: () => ({
+      plugins: [
+        vitePluginMarkdown(),
+      ],
+    })
+	}
+};
+
+export default config;
+```
+
+### Example: Snowpack
 
 ```js
 // snowpack.config.js
 import vitePluginMarkdown from '@dansvel/vite-plugin-markdown';
 export default {
     plugins: [
-        vitePluginMarkdown(markedConfig)
+        vitePluginMarkdown(),
     ],
-    // else
 };
-
 ```
 
-By default `withOrigin = false`.
-You can set it to `true` for return additional raw markdown string. Something like this
-`viteImportMarkdown(markedConfig, true)`
+## Options
 
+Function of the plugin is something like this
+
+```
+function (pluginOptions = {}, withOrigin = false)
+```
+
+`pluginOptions` is markedjs `setOptions` object, something like this
+
+```js
+const markedOptions = {
+  renderer: new marked.Renderer(),
+  highlight: function(code, lang) {
+    const hljs = require('highlight.js');
+    const language = hljs.getLanguage(lang) ? lang : 'plaintext';
+    return hljs.highlight(code, { language }).value;
+  },
+  pedantic: false,
+  gfm: true,
+  breaks: false,
+  sanitize: false,
+  smartLists: true,
+  smartypants: false,
+  xhtml: false
+}
+```
 See https://marked.js.org/using_advanced#options for more marked options
+
+If you set `withOrigin` to `true` it will return additional raw markdown string. Something like this
+`viteImportMarkdown({}, true)`
 
 ## Front matter
 
