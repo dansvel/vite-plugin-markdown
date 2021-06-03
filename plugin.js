@@ -1,7 +1,7 @@
 const marked  = require('marked')
 const frontMatter = require('front-matter')
 
-const thePlugin = function (pluginOptions = {}, withOrigin = false) {
+const plugin = function (pluginOptions = {}, withOrigin = false) {
   return {
     name: 'vite-import-markdown',
     config() {
@@ -32,5 +32,5 @@ const thePlugin = function (pluginOptions = {}, withOrigin = false) {
   }
 }
 
-export default thePlugin()
-module.exports = thePlugin()
+export default plugin()
+module.exports = plugin()
