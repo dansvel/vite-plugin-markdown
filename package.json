@@ -1,6 +1,6 @@
 {
   "name": "@dansvel/vite-plugin-markdown",
-  "version": "1.0.7",
+  "version": "1.0.6",
   "description": "A plugin for importing markdown files in Vite",
   "repository": {
     "type": "git",
