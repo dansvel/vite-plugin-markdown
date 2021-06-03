@@ -2,7 +2,7 @@
 
 This plugin just for my purpose only, feel free to develop it up. Very inspired from [snowpack-plugin-markdown](https://github.com/joshnuss/snowpack-plugin-markdown). But, I add little different option.
 
-## Usage
+## Installation
 
 ```
 npm i @dansvel/vite-plugin-markdown --save-dev
@@ -71,10 +71,10 @@ const markedOptions = {
 ```
 See https://marked.js.org/using_advanced#options for more marked options
 
-If you set `withOrigin` to `true` it will return additional raw markdown string. Something like this
+If you set `withOrigin` to `true` it will return additional raw markdown string. Set it like this
 `viteImportMarkdown({}, true)`
 
-## Front matter
+## Usage
 
 Attributes can be added to the top the file in YAML format:
 
@@ -84,7 +84,7 @@ title: Hello World!
 date: 2020-01-01
 ---
 
-# Some markdown
+### Single file
 ```
 
 The attributes will be available when imported:
@@ -96,6 +96,24 @@ import file from './path/to/some/file.md'
 // file.body -> markdown converted to html
 // file.title -> from frontmatter (can be any name you'd like)
 // file.date -> from frontmatter (cane be name you'd like)
+```
+
+### Multiple file
+
+```js
+const slug = 'hello-world' // or get from url or else
+
+// use relative path to markdown files directory
+// this example is for ./src/routes/post/[slug].svelte
+// and the content in  ./contents/post/
+const posts = await import.meta.glob('../../../contents/post/*.md') 
+let post
+for (const path in posts) {
+  if (slug === path.split('/').pop().split('.').shift()) {
+    post = await posts[path]()
+    post = { slug, ...post.default }
+  }
+}
 ```
 
 # License
