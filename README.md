@@ -17,14 +17,14 @@ import vitePluginMarkdown from '@dansvel/vite-plugin-markdown'
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
   // some preprocessor maybe
-	kit: {
-		target: '#svelte',
+  kit: {
+  target: '#svelte',
     vite: () => ({
       plugins: [
         vitePluginMarkdown(),
       ],
     })
-	}
+  }
 };
 
 export default config;
