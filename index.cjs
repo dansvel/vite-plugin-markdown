@@ -1,4 +1,4 @@
-const marked  = require('marked')
+const marked = require('marked')
 const frontMatter = require('front-matter')
 
 module.exports = function (pluginOptions = {}, withOrigin = false) {
