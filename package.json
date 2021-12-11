@@ -1,33 +1,58 @@
 {
   "name": "@dansvel/vite-plugin-markdown",
-  "version": "1.0.13",
-  "description": "A plugin for importing markdown files in Vite",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/dansvel/vite-import-markdown.git"
-  },
+  "version": "2.0.0",
   "author": "dan",
   "license": "MIT",
-  "dependencies": {
-    "front-matter": "^4.0.2",
-    "marked": "^2.0.1"
-  },
-  "peerDependencies": {
-    "vite": "^2.0.4"
-  },
-  "bugs": {
-    "url": "https://github.com/dansvel/vite-import-markdown/issues"
-  },
-  "homepage": "https://github.com/dansvel/vite-import-markdown#readme",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
+  "description": "A plugin for importing markdown files in Vite",
   "keywords": [
     "vite",
     "plugin",
     "markdown",
     "front-matter"
   ],
-  "main": "index.cjs",
-  "module": "index.mjs"
+  "scripts": {
+    "fix": "echo { \"type\": \"commonjs\" } > dist/cjs/package.json && echo { \"type\": \"module\" } > dist/mjs/package.json",
+    "build": "rm -fr dist/* && tsc -p tsconfig.json && tsc -p tsconfig-cjs.json && npm run fix",
+    "prepare": "npm run build"
+  },
+  "main": "dist/cjs/index.js",
+  "module": "dist/mjs/index.js",
+  "exports": {
+    ".": {
+      "import": "./dist/mjs/index.js",
+      "require": "./dist/cjs/index.js"
+    }
+  },
+  "dependencies": {
+    "front-matter": "^4.0.2",
+    "marked": "^4.0.7"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.16.0",
+    "@types/node": "^16.11.12",
+    "@typescript-eslint/eslint-plugin": "^5.6.0",
+    "@typescript-eslint/parser": "^5.6.0",
+    "eslint": "^8.4.1",
+    "shx": "^0.3.3",
+    "typescript": "^4.5.3",
+    "vite": "^2.7.1"
+  },
+  "peerDependencies": {
+    "vite": "^2.7.1"
+  },
+  "homepage": "https://github.com/dansvel/vite-import-markdown#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dansvel/vite-import-markdown.git"
+  },
+  "bugs": {
+    "url": "https://github.com/dansvel/vite-import-markdown/issues"
+  },
+  "files": [
+    "dist/"
+  ],
+  "engines": {
+    "node": ">=16.0.0",
+    "npm": ">=8.0.0"
+  }
 }
