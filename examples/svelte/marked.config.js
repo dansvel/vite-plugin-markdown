@@ -5,9 +5,4 @@ const highlight = (code, lang) => {
   return hljs.highlight(code, {language: lang}).value
 }
 
-export default {
-  markedOptions: {
-    highlight
-  },
-  withOrigin: true
-}
+export default { highlight }

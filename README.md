@@ -56,12 +56,8 @@ const highlight = (code, lang) => {
   return hljs.highlight(code, {language: lang}).value
 }
 
-export default {
-  markedOptions: {
-    highlight
-  },
-  withOrigin: true
-}
+
+export default { highlight }
 ```
 See https://marked.js.org/using_advanced#options for more marked options
 
@@ -76,8 +72,8 @@ const config = {
     target: '#svelte',
     vite: () => ({
       plugins: [
-        markdown(markedOptions),
-      ],
+        markdown({ markedOptions, withOrigin: true })
+      ]
     })
   }
 };
