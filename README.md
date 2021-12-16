@@ -126,7 +126,7 @@ const contents = import.meta.globEager('./*.md')
 let content
 for (const path in contents) {
   if (path.split('/').pop().split('.').shift() === thePathYouWant) {
-    content = contents[path]
+    content = contents[path].default
   }
 }
 
@@ -143,7 +143,7 @@ export const load = async ({ page }) => {
   for (const path in contents) {
     console.log(thePathYouWant)
     if (path.split('/').pop().split('.').shift() === thePathYouWant) {
-      content = await contents[path]()
+      content = (await contents[path]()).default
     }
   }
 

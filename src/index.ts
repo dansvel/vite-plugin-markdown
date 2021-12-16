@@ -18,18 +18,18 @@ export interface Result extends Metadata {
 }
 
 class Content {
-  #variables: string[] = []
+  variables: string[] = []
   #contextCode = ''
 
   add(content: {}): void {
     for (const name in content) {
       this.#contextCode += `const ${name} = ${JSON.stringify(content[name])}\n`
-      this.#variables.push(name)
+      this.variables.push(name)
     }
   }
 
   export(): string {
-    return [this.#contextCode, `export { ${this.#variables.join(', ')} }`].join('\n')
+    return [this.#contextCode, `export { ${this.variables.join(', ')} }`].join('\n')
   }
 }
 
@@ -61,7 +61,7 @@ export default (options: PluginOptions): Plugin => {
       content.add(result)
 
       return {
-        code: `${content.export()}\n export default ${JSON.stringify(result)}`
+        code: `${content.export()}\n export default { ${content.variables.join(', ')} }`
         // code: `export default ${JSON.stringify(result)}`,
       }
     }
