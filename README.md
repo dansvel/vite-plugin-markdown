@@ -118,38 +118,35 @@ import { attributes, body } from './path/to/some/file.md'
 
 ```js
 // example from index.svelte
-import { page } from '$app/stores';
+<script>
+  import { page } from '$app/stores';
 
-const thePathYouWant =  $page.path === '/' ? 'index' : $page.path.substring(1)
-const contents = import.meta.globEager('./*.md')
+  const files = import.meta.globEager('../posts/*.md')
+  const posts = []
 
-let content
-for (const path in contents) {
-  if (path.split('/').pop().split('.').shift() === thePathYouWant) {
-    content = contents[path].default
+  for (const path in contents) {
+    const { attributes } = files[path].default
+    posts.push(attributes)
   }
-}
-
-console.log(content)
+</script>
 ```
 #### asynchronous example
 
 ```js
-// example from svelte <script context="module">
-export const load = async ({ page }) => {
-  const thePathYouWant = page.path === '/' ? 'index' : page.path.substring(1)
-  const contents = await import.meta.glob('./*.md')
-  let content
-  for (const path in contents) {
-    console.log(thePathYouWant)
-    if (path.split('/').pop().split('.').shift() === thePathYouWant) {
-      content = (await contents[path]()).default
+// example from index.svelte
+<script context="module">
+  export const load = async () => {
+    const files = import.meta.glob('../posts/*.md')
+    const posts = []
+
+    for (const path in files) {
+      const { attributes } = (await files[path]()).default
+      posts.push(attributes)
     }
+
+    return { props : { posts } }
   }
-
-  return { props: { content } }
-}
-
+</script>
 ```
 
 # License

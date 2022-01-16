@@ -1,6 +1,6 @@
 {
   "name": "@dansvel/vite-plugin-markdown",
-  "version": "2.0.2",
+  "version": "2.0.1",
   "author": "dan",
   "license": "MIT",
   "description": "A plugin for importing markdown files in Vite",
@@ -25,7 +25,8 @@
   },
   "dependencies": {
     "front-matter": "^4.0.2",
-    "marked": "^4.0.7"
+    "marked": "^4.0.7",
+    "vite": "^2.7.1"
   },
   "devDependencies": {
     "@babel/core": "^7.16.0",
@@ -35,9 +36,6 @@
     "eslint": "^8.4.1",
     "shx": "^0.3.3",
     "typescript": "^4.5.3",
-    "vite": "^2.7.1"
-  },
-  "peerDependencies": {
     "vite": "^2.7.1"
   },
   "homepage": "https://github.com/dansvel/vite-import-markdown#readme",
