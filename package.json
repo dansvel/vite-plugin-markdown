@@ -1,6 +1,6 @@
 {
   "name": "@dansvel/vite-plugin-markdown",
-  "version": "2.0.3",
+  "version": "2.0.4",
   "author": "dan",
   "license": "MIT",
   "description": "A plugin for importing markdown files in Vite",
