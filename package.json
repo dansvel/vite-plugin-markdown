@@ -1,6 +1,6 @@
 {
   "name": "@dansvel/vite-plugin-markdown",
-  "version": "2.0.4",
+  "version": "2.0.5",
   "author": "dan",
   "license": "MIT",
   "description": "A plugin for importing markdown files in Vite",
@@ -24,9 +24,9 @@
     }
   },
   "dependencies": {
-    "front-matter": "^4.0.2",
-    "marked": "^4.0.7",
-    "vite": "^2.7.1"
+    "front-matter": "*",
+    "marked": "*",
+    "vite": "*"
   },
   "devDependencies": {
     "@babel/core": "^7.16.0",
